@@ -56,8 +56,8 @@ while True:
             import desafio
         elif texto=="pickle_creator":
             import pickle_creator
-        elif texto=="ejal":
-            import ejal
+        #elif texto=="ejal":
+            #import ejal
         elif texto=="timer":
             import timer
         print("do you want to play another game or application?");speak.Speak("do you want to play another game or application?")
