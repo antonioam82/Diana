@@ -1,3 +1,5 @@
+import win32com.client as wc
+import random
 import subprocess
 import time
 from conversaciones import despedidas
@@ -30,9 +32,9 @@ time.sleep(1)
 momento=time.localtime()
 if momento[3]>=12 and momento[3]<22:
     print("GOOD AFTERNOON");speak.Speak("good afternoon")
-elif momento[3]>=1 and momento[3]<12:
+elif momento[3]>=7 and momento[3]<12:
     print("GOOD MORNING");speak.Speak("good morning")
-elif momento[3]>=22 and momento[3]<=23:
+elif momento[3]>=22 and momento[3]<=23 or (momento[3]>=0 and momento[3]<7):
     print("GOOD NIGHT");speak.Speak("good night")
     
 
@@ -56,10 +58,12 @@ while True:
             import desafio
         elif texto=="pickle_creator":
             import pickle_creator
-        #elif texto=="ejal":
-            #import ejal
+        elif texto=="ejal":
+            import ejal
         elif texto=="timer":
             import timer
+        elif texto=="bot1":
+            import bot1
         print("do you want to play another game or application?");speak.Speak("do you want to play another game or application?")
         texto=yyes(input().lower())
         if texto=="yes" or texto=="y":
@@ -78,4 +82,3 @@ print("OK");speak.Speak("OK")
 despedida=random.choice(despedidas)
 speak.Speak(despedida)
     
-
